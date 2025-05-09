@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="FINAL-PROJECT.css">
+    </head>
+<body>
+<!-- Nav Bar -->
+         <nav>
+        <ul class="sidebar">
+   <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#ffffff"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+   <li><a href="#Campaign">Campaign</a></li>
+   <li><a href="#haha">Environment</a></li>
+   <li><a href="#Spotlights">Spotlights</a></li>
+   <li><a href="FAQs.html">FAQs</a></li>
+   <li><a href="Liam.html">About Us</a></li>
+       </ul>
+       
+  <ul class="front">
+   <li><a href="#">Wild Guard</a></li>
+   <li class="hideOnMobile"><a href="#Campaign">Campaign</a></li>
+   <li class="hideOnMobile"><a href="#haha">Environment</a></li>
+   <li class="hideOnMobile"><a href="#Spotlights">Spotlights</a></li>
+   <li class="hideOnMobile"><a href="FAQs.html">FAQs</a></li>
+   <li class="hideOnMobile"><a href="Liam.html">AboutUs</a></li>
+   <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#ffffff"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+  </ul>
+    </nav>
+
+  <script>
+function showSidebar(){
+const sidebar = document.querySelector('.sidebar')
+sidebar.style.display = 'flex'
+}
+
+function hideSidebar(){
+const sidebar = document.querySelector('.sidebar')
+sidebar.style.display = 'none'
+}
+  </script>
+    
+    
+    
+       <!-- banner -->
+    <div class="banner">
+        <div class="content" id="Campaign">
+            <div class="letthem"><br><br>Let them</div>
+            <div>Live</div>
+            <div>
+              <div class="letthem">No to Extinction.</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- endbanner -->
+    <footer class="footer">
+  <div class="footer-content">
+    <img src="image/logo1.jpg" alt="Wild Guard">
+    <img src="image/logo3.jpg" alt="SECTION">
+    <img src="image/logo2.jpg" alt="OLFU">
+    <img src="image/logo4.jpg" alt="ICT">
+  </div>
+</footer><hr style="border: none; height: 2px; background-color: black;">
+    
+    <!-- Introduction -->
+    <div class="container">
+    <div class="content">
+      <div class="main-section">
+        <div class="image-group">
+          <img src="image/eyeofeagle.jpg" alt="Eye of Eagle">
+          <img src="image/karabaw.jpg" alt="karabaw">
+          <img src="image/hawksbill.jpg" alt="Turtle">
+        </div>
+
+       <div class="text-section">
+          <p class="text-yellow">Wild Guard</p>
+          <h1 class="heading">PRIMAL EVOLUTION</h1>
+          
+          <div class="container2">
+          <p class="paragraph">
+            In a world ruled by instinct, One species rose through intelligence. From chaos to consciousness, From protector to predator.</p>
+            
+          <div class="button-group">
+            <button onclick="scrollToSection()" class="button">See more</button>
+           
+            </div>
+          </div>
+        </div>
+        </div>
+
+      <div class="stats">
+        <div>
+          <p class="stat-number">418</p>
+          <p class="stat-label">Species Of Animals On The Official Threatened List</p>
+        </div>
+        <div>
+          <p class="stat-number">2000+</p>
+          <p class="stat-label">Total Of Animals Facing Extinction</p>
+        </div>
+        <div>
+          <p class="stat-number">474+</p>
+          <p class="stat-label">Reached Audience</p>
+        </div>
+        <div>
+          <p class="stat-number">678+</p>
+          <p class="stat-label">Total Followers</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <hr style="border: none; height: 2px; background-color: black;"><br>
+  
+<script>
+  function scrollToSection() {
+    const target = document.getElementById("intro-content");
+    target.scrollIntoView({ behavior: "smooth" });
+  }
+</script>
+  
+  
+<!-- body -->
+    <section class="content-card">
+        <div class="two-col">
+            <div class="text-content" id="intro-content">
+                <p>In a world where many living creatures exists, devouring one another is only natural. In order to survive, one must eat to live. With this in mind, physicality is the only thing that matters in this world.</p>
+                
+                <p>However, one stood up and made others quiver at its presence— humans.</p><br>
+                
+                <p>Even though they are physically inferior compared to other creatures, humans rose to the top because they are the most intelligent creatures on planet Earth.</p>
+                <br>
+                <p>‎
+‎However, humans have created a moral standard — humane & inhumane. In an ecosystem where humans dominate, animals have become of a lesser social issue of concern.</p>
+
+                <br>
+                <a href="#body-content" class="btn">Learn more about it</a>
+            </div>
+            <div class="image-container">
+                <img src="image/intro.jpg" alt="humans">
+            </div>
+        </div>
+    </section>
+    
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="image/eaglekarabaw.jpg" alt="karabaw">
+            </div>
+            <div class="about-text" id="body-content">
+                <h3>Philippine Eagle</h3>
+                <p>Also known as the Haring Ibon, the Philippine Eagle is one of the most powerful aerial predators in the world. Sadly, it is critically endangered, with only around 400 pairs estimated to remain in the wild, according to the International Union for Conservation of Nature (IUCN). One of the most well-known individuals of the species, Pag-asa, was the first Philippine Eagle bred and hatched in captivity. He became a symbol of hope for conservation but passed away in January 2021 due to Trichomoniasis and Aspergillosis.</p>
+                <br>
+                <h3>Tamaraw</h3>
+                <p>The Tamaraw is the largest land mammal in the Philippines and the only wild cattle species native to the archipelago. It was declared the national land animal of the Philippines in December 2017, highlighting its cultural and ecological importance.
+
+According to the IUCN, the Tamaraw is critically endangered, with a total population estimated at no more than 580 individuals remaining in the wild.</p>
+            </div>
+        </div>
+    </section>
+    
+    
+    <section class="burnout-section">
+        <div class="burnout-text">
+            <h3>Hawksbill Turtle</h3>
+            <p>‎The Hawksbill Turtle, one of five marine turtle species in the Philippines, is critically endangered according to the IUCN, with its global population declining by 80% over the past decade. In the Philippines, their survival is further threatened by poaching for meat and shells, as well as rising sea levels.</p>
+            <br>
+            <h3>Dugongs</h3>
+            <p>Dugongs have been listed as vulnerable on the IUCN Red List since 1982, with around 100,000 individuals found in the waters of about 40 countries. While globally present, some populations face more severe threats—such as in China, where dugongs are now fully extinct—due to habitat loss, pollution, fishing net entanglement, boat strikes, and other human-related impacts.</p>
+        </div>
+        <div class="burnout-image">
+            <img src="image/dugong.jpg" alt="dugong">
+        </div>
+    </section>
+    <hr style="border: none; height: 2px; background-color: black;">
+    
+<section class="about-section">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="image/birdandshield.jpg" alt="birdandshield">
+            </div>
+            <div class="about-text">
+                <h3>PHILIPPINE COCKATOO</h3>
+                <p>Locally known as katala, abukay, agay, or kalangay, the Philippine Cockatoo is critically endangered due to illegal hunting and habitat loss. According to the IUCN and a 2016 BirdLife report, its population has sharply declined over the past three generations, with only about 650 to 1,120 individuals remaining, including 430 to 750 mature birds.</p>
+                <br>
+                <h3>PALAWAN PANGOLIN</h3>
+                <p>‎Locally known as Balintong, the Palawan Pangolin—also called the scaly anteater—is critically endangered and considered the most threatened pangolin species, as it is found only in the Palawan Islands. Heavily hunted and trafficked for its meat and scales, the species faces a steep decline, with 7,000 individuals seized in 2019 alone.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="quote-section">
+        <div class="quote-container">
+            <p>Join us in spreading awareness and advocating for the animals. Be humane and always remember that we, humans, need other animals to survive and to be able to live on Earth.</p>
+        </div>
+    </section>
+    
+    
+    
+    
+    <!-- latest news -->
+ <div class="background1">
+  <section id="haha">
+        <div class="section-header">
+            <h2>Evironmental Issues</h2>
+            <div class="nav-tabs">
+                <a href="#">All Issues</a>
+                <a href="#">Climate Change</a>
+                <a href="#">Pollution</a>
+                <a href="#">Habitat Loss</a>
+                <a href="#">Overexploitation</a>
+            </div>
+        </div>
+        <div class="destinations-grid">
+            <div class="destination-card">
+                <img src="image/ClimateChange.jpg" alt="Climate">
+                <div class="destination-info">
+                    <div class="destination-title">Climate Change</div>
+                    <div class="destination-country">Rising temperatures and extreme weather threaten animals across land, sea, and sky, accelerating extinction.</div>
+                </div>
+            </div>
+            
+            <div class="destination-card">
+                <img src="image/kawawa.jpg" alt="Plastic">
+                <div class="destination-info">
+                    <div class="destination-title">Plastic Pollution</div>
+                    <div class="destination-country">Marine animals ingest or become entangled in plastic, often leading to death.</div>
+                </div>
+            </div>
+            
+            <div class="destination-card">
+                <img src="image/Deforestation.jpg" alt="Deforestation">
+                <div class="destination-info">
+                    <div class="destination-title">Habitat Destruction.</div>
+                    <div class="destination-country">Deforestation, farming, and urban sprawl destroy the homes of elephants, tigers, and countless other species.</div>
+                </div>
+            </div>
+            
+            <div class="destination-card">
+                <img src="image/AirPollution.jpg" alt="Air Pollution">
+                <div class="destination-info">
+                    <div class="destination-title">Air Pollution</div>
+                    <div class="destination-country">Toxic air and chemicals harm birds and pollinators like bees, disrupting ecosystems and food chains.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <div class="stories-header">
+            <h2>Latest Stories</h2>
+            <a href="#" class="read-more">Read more stories</a>
+        </div>
+        
+        <div class="stories-section">
+            <div class="main-story">
+                <img src="image/DireWolf.jpg" alt="Wolf">
+                <div class="main-story-content">
+                    <a href="https://time.com/7274542/colossal-dire-wolf/"><h3 class="main-story-title">The Return of the Dire Wolf</h3></a>
+                    <div class="story-meta">Apr 7, 2025 • 4 min read</div>
+                    <p class="story-excerpt">When your legs don't work like they used to before. and I cant sweep you off of your feet.</p>
+                </div>
+            </div>
+            
+            <div class="side-stories">
+                <div class="side-story">
+                    <img src="image/300species.jpg" alt="300">
+                    <div class="side-story-content">
+                        <a href="https://youtu.be/RpJrkY71Cnc?si=DNiPOjQHTdofNFkJ"><h4 class="side-story-title">Over 300 New Species Found in the Philippines</h4></a>
+                        <div class="story-meta">Aug 15, 2025 • 6 min read</div>
+                    </div>
+                </div>
+                
+                <div class="side-story">
+                    <img src="image/Endangered.jpg" alt="Endangered">
+                    <div class="side-story-content">
+                        <a href="https://www.wwf.org.uk/learn/wildlife/endangered-animals"<h4 class="side-story-title">10 of the world's most endangered animals</h4></a>
+                        <div class="story-meta">Aug 10, 2025 • 5 min read</div>
+                    </div>
+                </div>
+                
+                <div class="side-story">
+                    <img src="image/Dog.jpg" alt="Dog">
+                    <div class="side-story-content">
+                        <a href="https://www.philstar.com/world/2024/01/09/2324565/south-korea-parliament-vote-banning-dog-meat-trade"><h4 class="side-story-title">South Korea parliament to vote on banning dog meat trade</h4></a>
+                        <div class="story-meta">Jan 9, 2024 • 7 min read</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+    
+
+  <!-- spotlights -->
+    <section class="highlights-section" id="Spotlights">
+        <div class="container5">
+
+    
+    <!-- Milestones Section -->
+    <section class="milestones-section">
+        <div class="container5">
+            <h1 class="section-title milestones-title">Campaign Milestones</h1>
+            <div class="timeline">
+                <!-- Milestone 1 -->
+                <div class="milestone milestone-right">
+                    <div class="milestone-dot"></div>
+                    <div class="milestone-content">
+                        <div class="milestone-date">APRIL 9, 2025</div>
+                        
+                        <span class="milestone-metric">Wild Guard spawned!</span>
+        <br>
+                        <p class="milestone-desc">This day, the facebook page— Wild Guard: Click & Care has been created. This is the start of our journey, where we aim to advocate and spread awareness for the animals, regardless of their nature.</p>
+                    </div>
+                </div>
+                
+                <!-- Milestone 2 -->
+                <div class="milestone milestone-left">
+                    <div class="milestone-dot"></div>
+                    <div class="milestone-content">
+                        <span class="milestone-date">April 11, 2025</span>
+  <span class="milestone-metric">Wild Guard posted its first facebook post! </span>  
+    <br>
+                        <p class="milestone-desc">The post celebrates the event— 'pet day'. We wanted to mark our first steps and this is what we would like to advocate. Domesticated or wild, we still desire to advocate for the animals.</p>
+                        
+                    </div>
+                </div>
+                
+                <!-- Milestone 3 -->
+                <div class="milestone milestone-right">
+                    <div class="milestone-dot"></div>
+                    <div class="milestone-content">
+                        <span class="milestone-date">April 16, 2025</span>                      
+                                                <span class="milestone-metric">Wild Guard's foundation— On! </span>
+                         <br>                       
+                        <p class="milestone-desc"> ‎This is a milestone where Wild Guard states it's mission and vision. This is the most important facebook post for us, as it reminds the members and followers of Wild Guard, the final goal and how to act on it.</p>
+                        
+                    </div>
+                </div>
+                
+                <!-- Milestone 4 -->
+                <div class="milestone milestone-left">
+                    <div class="milestone-dot"></div>
+                    <div class="milestone-content">
+                        <div class="milestone-date">April 17, 2025</div>
+<span class="milestone-metric">Wild Guard's infographic— On!</span>
+<br>
+                        <p class="milestone-desc">This day was the event where the first ever infographic that Wild Guard has released. We, Wild Guard, wanted people to be aware, inspired, and incited to take action. The infographic provides lots of information that are helpful in introducing Wild Guard's existance.</p>
+                    </div>
+                </div>
+                
+                <!-- Milestone 5 -->
+                <div class="milestone milestone-right">
+                    <div class="milestone-dot"></div>
+                    <div class="milestone-content">
+                        <div class="milestone-date">May 6, 2025</div>
+                        <span class="milestone-metric">Wild Guard: Click & Care— so many clicked!</span>
+                        <br>
+                        <p class="milestone-desc">This day, Wild Guard has gained a total of 600 followers. Although not as big as other Facebook pages, we are still proud that we got such a huge amount of traction in such a small amount of time. Imagine this. 12 classes with 50 students? Amazing!</p>
+                    </div>
+                </div>
+                
+                <!-- Milestone 6 -->
+                <div class="milestone milestone-left">
+                    <div class="milestone-dot"></div>
+                    <div class="milestone-content">
+                        <div class="milestone-date">May 10, 2025</div>
+                        <span class="milestone-metric">Wild Guard Website— On!</span>
+                        <br>
+                        <p class="milestone-desc">The day where we all waited for. Wild Guard's official website has been created! Thanks to our Website manager, the website you are exploring as of now, lies in front of your very eyes! This is the biggest step that we have done, yet. Wild Guard will continue to advocate for the animals, so please help us reach even more milestones. Thank you for clicking and caring!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
