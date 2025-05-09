@@ -1,0 +1,636 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Justin</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto+Slab&family=Roboto&display=swap');
+
+  /* Reset and base */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    background-color: #f9f4e9;
+    font-family: 'Roboto', sans-serif;
+    color: #1a1a1a;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  a {
+    text-decoration: none;
+  }
+
+  /* Container */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 24px 48px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  @media (min-width: 768px) {
+    .container {
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      padding: 48px 48px 80px;
+    }
+  }
+
+  /* Left side */
+  .left {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  /* Logo and name */
+  .logo-name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .logo-name img {
+    width: 20px;
+    height: 20px;
+  }
+  .logo-name span {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #1a1a1a;
+  }
+
+  /* Heading */
+  .heading {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1.1;
+    color: #1a1a1a;
+  }
+  @media (min-width: 768px) {
+    .heading {
+      font-size: 48px;
+    }
+  }
+
+  /* Description */
+  .description {
+    font-size: 12px;
+    line-height: 1.5;
+    max-width: 400px;
+    color: #4a4a4a;
+  }
+  @media (min-width: 768px) {
+    .description {
+      font-size: 14px;
+    }
+  }
+
+  /* Linkedin button */
+  .linkedin-btn {
+    display: inline-block;
+    background-color: #f59e0b;
+    color: white;
+    font-weight: 600;
+    font-size: 12px;
+    padding: 6px 20px;
+    border-radius: 9999px;
+    transition: background-color 0.3s ease;
+    max-width: fit-content;
+  }
+  .linkedin-btn:hover {
+    background-color: #d17f00;
+  }
+
+  /* Section titles */
+  .section-title {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #d17f00;
+    margin-bottom: 16px;
+    text-shadow: 1px 1px 0 #f59e0b;
+  }
+
+  /* Education and Experience lists */
+  .list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 400px;
+  }
+  .list-item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .list-item .year {
+    color: #f59e0b;
+    font-weight: 600;
+    min-width: 70px;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  .list-item .content {
+    flex: 1;
+  }
+  .list-item .content p:first-child {
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0 0 4px 0;
+    font-size: 14px;
+  }
+  .list-item .content p:last-child {
+    font-size: 10px;
+    margin: 0;
+    color: #4a4a4a;
+  }
+  .list-item .content span {
+    display: block;
+    font-weight: 600;
+    color: #f59e0b;
+    font-size: 12px;
+    margin-top: 2px;
+  }
+
+  /* Hashtags container */
+  .hashtags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    max-width: 400px;
+  }
+  .hashtag {
+    background-color: #1a1a1a;
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    white-space: nowrap;
+  }
+
+  /* Right side */
+  .right {
+    position: relative;
+    background-color: #d1d9c1;
+    padding: 24px 24px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: visible;
+  }
+  @media (min-width: 768px) {
+    .right {
+      padding: 40px 40px 56px;
+    }
+  }
+
+  /* Large faint text behind */
+  .background-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    user-select: none;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 96px;
+    line-height: 1;
+    color: #7a7f3a;
+    opacity: 0.2;
+    white-space: pre-line;
+    text-align: center;
+  }
+  @media (min-width: 768px) {
+    .background-text {
+      font-size: 128px;
+    }
+  }
+
+  /* Top container with image and bubbles */
+  .top-container {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  @media (min-width: 768px) {
+    .top-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+  }
+  .profile-img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
+  }
+  .bubbles {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .bubble {
+    background-color: #f59e0b;
+    color: #1a1a1a;
+    font-weight: 600;
+    font-size: 10px;
+    padding: 6px 20px;
+    border-radius: 9999px;
+    width: max-content;
+    white-space: nowrap;
+  }
+
+  /* Contact box */
+  .contact-box {
+    position: relative;
+    z-index: 10;
+    background-color: black;
+    color: white;
+    border-radius: 6px;
+    padding: 20px 24px;
+    margin: 24px auto; /* Center the contact box horizontally */
+    max-width: 320px; /* Set a maximum width */
+    font-family: 'Roboto Slab', serif;
+    text-align: center; /* Center the text inside */
+  }
+  .contact-box h4 {
+    font-weight: 600;
+    font-size: 18px;
+    margin: 0 0 12px 0;
+  }
+  .contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+  }
+  .contact-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .contact-list li:last-child {
+    margin-bottom: 0;
+  }
+  .contact-list i {
+    font-size: 10px;
+    min-width: 14px;
+    text-align: center;
+  }
+
+  /* Technical skills */
+  .technical-skills {
+    position: relative;
+    z-index: 10;
+    margin-top: 32px;
+    max-width: 320px;
+  }
+  .technical-skills h3 {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #d17f00;
+    margin-bottom: 12px;
+    text-shadow: 1px 1px 0 #f59e0b;
+  }
+  
+  .skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  @media (min-width: 768px) {
+    .skills-container {
+      flex-direction: row;
+      gap: 48px;
+    }
+  }
+  .software-skills, .coding-skills {
+    font-size: 10px;
+    color: #1a1a1a;
+  }
+  .software-skills p, .coding-skills p {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 600;
+    margin: 0 0 6px 0;
+  }
+  .coding-skills p:last-child {
+    font-weight: 400;
+    font-size: 9px;
+    margin-top: 0;
+    line-height: 1.3;
+  }
+  .software-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .software-item {
+    border: 1px solid #1a1a1a;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-weight: 600;
+    user-select: none;
+  }
+
+  /* Black pill buttons */
+  .tech-pills {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .tech-pill {
+    background-color: black;
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    white-space: nowrap;
+  }
+
+  /* Language section */
+  .language-section {
+    position: relative;
+    z-index: 10;
+    margin-top: 32px;
+    max-width: 320px;
+  }
+  .language-section h3 {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #1a1a1a;
+    margin-bottom: 16px;
+  }
+  .language-list {
+    display: flex;
+    justify-content: ;
+    gap: 24px;
+    font-weight: 600;
+    font-size: 10px;
+    color: #1a1a1a;
+  }
+  .language-item {
+    text-align: center;  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .language-item p {
+  margin: 0;
+  }
+
+  .language-item p:last-child {
+    font-weight: 400;
+    font-size: 9px;
+    margin-top: 4px;
+  }
+
+  /* mission and vision */
+  .mission-vision-section {
+    grid-column: 1 / -1;
+    background-color: #d1d9c1;
+    padding: 32px 24px 40px;
+    border-radius: 6px;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    font-family: 'Roboto Slab', serif;
+    color: #1a1a1a;
+  }
+  @media (min-width: 768px) {
+    .mission-vision-section {
+      padding: 48px 48px 56px;
+      display: flex;
+      gap: 80px;
+    }
+  }
+  .mission, .vision {
+    flex: 1;
+  }
+  .mission h3, .vision h3 {
+    font-weight: 600;
+    font-size: 18px;
+    color: #d17f00;
+    margin-bottom: 12px;
+    text-shadow: 1px 1px 0 #f59e0b;
+  }
+  .mission p, .vision p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+  }
+  
+
+  .circle-btn-container {
+  display: flex;
+  gap: 10px; /* space between buttons */
+  justify-content: flex-start; /* Align buttons with the bubbles */
+  margin-top: 8px;
+}
+
+.circle-btn {
+  width: 50px;
+  height: 50px;
+  background-color: #d1d9c1;
+  border: none;
+  border-radius: 50%;
+  color: #424242;
+  box-shadow: -6px -6px 10px #d5ddc5, 6px 6px 10px #00000026;
+  transition: box-shadow 0.3s ease;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-btn:hover {
+  box-shadow: 2px 2px 2px #d5ddc5, -2px 2px 2px #00000026;
+}
+
+.Alwaystop {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 600;
+  font-size: 28px; /* Keep the font size */
+  color: #d17f00;
+  margin-bottom: 50px; /* Move the heading closer to the image */
+  text-align: center;
+  text-shadow: 1px 1px 0 #f59e0b;
+}
+
+
+</style>
+</head>
+<body>
+  <div class="container">
+    <!-- Left side -->
+    <section class="left">
+      <div class="logo-name">
+        <img src="image/star.jpg" alt="Orange star icon" width="20" height="20" />
+        <span>Justin C. Catad</span>
+      </div>
+      <h1 class="heading">Hello,<br />I’m Justin !</h1>
+      <p class="description">Justin Catad, 17, Senior high student. I don't have a goal nor purpose but I always continue to strive for the better. Right now I don't have any sports but I think I can play well on badminton and football. I'm always finding a solution even tho how bad it is and I can be playful sometimes.
+      </p>
+      <a href="https://www.facebook.com/share/163RHqQZMF/" target="_blank" class="linkedin-btn" rel="noopener noreferrer">Wild Guard FB Page</a>
+
+      <div>
+        <h2 class="section-title">Education</h2>
+        <ul class="list">
+          <li class="list-item">
+            <span class="year">2014 - 2020</span>
+            <div class="content">
+              <p>Bagong Silangan Elementary School</p>
+              <p>Native School</p>
+            </div>
+          </li>
+          <li class="list-item">
+            <span class="year">2020 - 2024</span>
+            <div class="content">
+              <p>Bagong Silangan High School</p>
+              <p>School of choice</p>
+            </div>
+          </li>
+          <li class="list-item">
+            <span class="year">2024 - 2025</span>
+            <div class="content">
+              <p>Our Lady Of Fatima University</p>
+              <p>STEM Strand</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="section-title">‎Wild Guard Project</h2>
+        <ul class="list">
+          <li class="list-item">
+            <span class="year">Role</span>
+            <div class="content">
+              <p>MultiMedia Committee<span><span></p>
+   
+            </div>
+          </li>
+          <li class="list-item">
+            <span class="year">Other</span>
+            <div class="content">
+              <p>Contributions: <span>Help gain followers and help make a poster for the page</p>
+            </div>
+        </ul>
+      </div>
+
+      <div class="hashtags">
+        <span class="hashtag">#No-To-Extinction</span>
+        <span class="hashtag">#All-Lives-Matter</span>
+        <span class="hashtag">#WildGuard</span>
+        <span class="hashtag">#AnimalRights</span>
+      </div>
+    </section>
+
+    <!-- Right side -->
+    <section class="right">
+      <div class="background-text" aria-hidden="true">PROFILE PROFILE PROFILE</div>
+
+      <div class="top-container">
+          <h3 class="Alwaystop">Wild Guard: MultiMedia Committee</h3>
+          <div style="display: flex; align-items: center; gap: 16px;">
+    <img src="image/Catad.jpg" alt="Justin" class="profile-img" width="140" height="140" />
+    <div>
+      <div class="bubbles">
+        <span class="bubble">18th of December 2007</span>
+        <span class="bubble">Filipino</span>
+      </div>
+      <div class="circle-btn-container">
+        <a href="Lance.html"><button class="circle-btn">&lt;</button></a>
+        <a href="Jherson.html"><button class="circle-btn">&gt;</button></a>
+      </div>
+    </div>
+  </div>
+      </div>
+
+
+      <div class="contact-box">
+        <h4>Contact</h4>
+        <ul class="contact-list">
+          <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Quezon City</span></li>
+          <li><i class="fas fa-envelope" aria-hidden="true"></i><span>jccatad6199@student.fatima.edu.ph</span></li>
+          <li><i class="fas fa-phone-alt" aria-hidden="true"></i><span>09933487713</span></li>
+        </ul>
+      </div>
+
+      <div class="technical-skills">
+        <h3>Academic skills</h3>
+        <div class="skills-container">
+          <div class="software-skills">
+            <p>And other Skills:</p>
+            <div class="software-list">
+              <span class="software-item">N/A</span>
+            </div>
+          </div>
+          <div class="coding-skills">
+            <p>Coding skills</p>
+            <p>N/A</p>
+          </div>
+        </div>
+        <h3>Hobbies</h3>
+        <div class="tech-pills">
+          <span class="tech-pill">Badminton</span>
+          <span class="tech-pill">Football</span>
+          <span class="tech-pill">Drawing</span>
+          <span class="tech-pill">Guitar</span>
+        </div>
+      </div>
+
+      <div class="language-section">
+        <h3>Language</h3>
+        <div class="language-list">
+          <div class="language-item">
+            <p>English</p>
+            <p>Fluent</p>
+          </div>
+          <div class="language-item">
+            <p>Tagalog</p>
+            <p>Native</p>
+          </div>
+          <!-- another language -->
+        </div>
+      </div>
+    </section>
+  </div>
+
+    <!-- Mission and Vision Section -->
+    <section class="mission-vision-section" aria-label="Mission and Vision">
+      <div class="mission">
+        <h3>Mission</h3>
+        <p>To protect and uplift the lives of all animals by raising awareness, ending abuse, and preventing extinction. We aim to foster compassion, responsibility, and action in every individual, to treat animals not as lesser beings, but as living souls who deserve care, respect, and the right to thrive.</p>
+      </div>
+      <div class="vision">
+        <h3>Vision</h3>
+        <p>A world where every animal is free from harm, valued for their role in the ecosystem, and treated with the dignity they deserve. A future where humans and animals coexist with empathy, balance, and a shared commitment to protect all life on Earth.</p>
+      </div>
+    </section>
+  </body>
+  </html>
