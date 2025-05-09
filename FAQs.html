@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Your Questions Answered</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+        }
+        
+        body {
+            background-color: #f5f2ea;
+            color: #3c4a3e;
+            line-height: 1.6;
+            background-image: url('image/crunch-paper-background.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            background-image: url('image/1.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 4rem 2rem;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(33, 48, 39, 0.6);
+            z-index: 1;
+        }
+        
+        header * {
+            position: relative;
+            z-index: 2;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+            letter-spacing: 1px;
+            font-weight: 300;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: #e8e8e8;
+            margin-bottom: 2rem;
+            font-style: italic;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .faq-container {
+            margin-bottom: 3rem;
+        }
+        
+        .faq-item {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            overflow: hidden;
+            border-left: 4px solid #61876E;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            color: #3c4a3e;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .faq-question:hover {
+            background-color: rgba(97, 135, 110, 0.1);
+        }
+        
+        .faq-question.active {
+            background-color: rgba(97, 135, 110, 0.15);
+            color: #445a48;
+        }
+        
+        .faq-answer {
+            display: none;
+            padding: 0 1.5rem 1.5rem;
+            line-height: 1.7;
+            color: #5a6d61;
+            font-size: 1.05rem;
+            border-top: 1px solid rgba(97, 135, 110, 0.2);
+        }
+        
+        .faq-answer.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .icon {
+            transition: transform 0.3s ease;
+            font-size: 1.5rem;
+            color: #61876E;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .faq-question.active .icon {
+            transform: rotate(45deg);
+        }
+        
+        .contact-section {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: #3C6255;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+            margin-top: 4rem;
+        }
+        
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+        
+        .contact-section::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+        
+        .contact-section h2 {
+            margin-bottom: 1.5rem;
+            position: relative;
+            font-weight: 300;
+            font-size: 2.2rem;
+            letter-spacing: 1px;
+        }
+        
+        .contact-section p {
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 1;
+            font-size: 1.1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #EAE7B1;
+            color: #3C6255;
+            padding: 0.9rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            position: relative;
+            z-index: 1;
+            font-size: 1.05rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        
+        .btn:hover {
+            background-color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            color: #61876E;
+            font-size: 0.95rem;
+            border-top: 1px solid rgba(97, 135, 110, 0.2);
+            letter-spacing: 0.5px;
+        }
+        
+        /* Decorative elements */
+        .decorative-leaf {
+            position: absolute;
+            font-size: 1.5rem;
+            color: rgba(97, 135, 110, 0.2);
+            z-index: 0;
+        }
+        
+        .leaf-1 {
+            top: 10%;
+            left: 5%;
+            transform: rotate(45deg);
+        }
+        
+        .leaf-2 {
+            bottom: 15%;
+            right: 8%;
+            transform: rotate(-30deg);
+        }
+        
+        /* Add more natural styling to lists */
+        .faq-answer ul, .faq-answer ol {
+            margin-left: 20px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .faq-answer li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 5px;
+        }
+        
+        .faq-answer ul li::before {
+            content: "•";
+            color: #61876E;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span class="decorative-leaf leaf-1">✦</span>
+        <span class="decorative-leaf leaf-2">✦</span>
+        <header>
+            <h1>Frequently Asked Questions</h1>
+            <p class="subtitle">Find answers to common questions about our campaign and discover how we can help prevent extinction</p>
+        </header>
+        
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How can I help protect endangered species?</span>
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>You can help protect endangered species by supporting conservation organizations, reducing your carbon footprint, advocating for stronger environmental policies, and spreading awareness about wildlife protection.
+</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What are endangered species?</span>
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Endangered species are animals or plants that are at risk of becoming extinct due to factors like habitat loss, overhunting, or environmental changes. These species have very few individuals left in the wild, making them highly vulnerable.</p>
+                    <ul>
+                        <li>An endangered species is a plant or animal facing a very high risk of extinction in the wild.
+</li>
+                        <li><strong>Key threats:</strong> habitat loss, climate change, pollution, poaching, and the spread of invasive species.
+</li>
+                        <li>Fewer than  <strong>4%</strong> of the world’s mammals, birds, reptiles, amphibians, and fish are currently listed as endangered.</li>
+                    </ul>
+                    <p>Endangered species are more than just names on a list—they are living beings fighting for survival. Each loss brings us closer to an unbalanced world.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What can I do to reduce my impact on wildlife?</span>
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>You can reduce your impact by conserving energy, reducing waste, choosing sustainable products, and supporting eco-friendly businesses. Additionally, participating in local conservation efforts and volunteering can make a significant difference.</p>
+                    <ol>
+                        <li><strong>Be mindful of your consumption:</strong> Conserve energy and water, avoid single-use plastics, and choose products with minimal packaging.</li>
+                        <li><strong>Support sustainable and ethical choices:</strong> Buy from eco-friendly brands, avoid products linked to deforestation or animal exploitation, and choose local, organic, or plant-based foods.</li>
+                        <li><strong>Reduce, reuse, and recycle:</strong> Limit waste by reusing items, recycling properly, and donating rather than discarding goods.</li>
+                        <li><strong>Get involved locally:</strong> Volunteer for clean-ups, tree planting, or wildlife monitoring programs in your area.</li>
+                        <li><strong>Advocate and educate:</strong> Share what you learn, support conservation organizations, and use your voice to influence others and promote policies that protect nature.</li>
+                    </ol>
+                    <p>by following this simple steps, you're not only protecting the nature, but also the wildlife.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Why is preventing extinction important?</span>
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Every species plays a role in keeping ecosystems balanced. When one disappears, it can trigger a chain reaction that affects other animals, plants, and even humans. Preventing extinction helps protect biodiversity, food security, and the health of our planet.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Why are animals going extinct faster today?</span>
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Human activities like deforestation, pollution, overfishing, and climate change have rapidly increased extinction rates—now estimated to be 1,000 times higher than natural levels.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can endangered animals still recover?</span>
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, with urgent action. Species like the <strong>Giant Panda</strong> and <strong>Humpback Whale</strong> have rebounded thanks to focused conservation efforts. Recovery is possible when people care and act together.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What counts as animal cruelty?</span>
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Animal cruelty encompasses any act that causes unnecessary pain, suffering, or distress to an animal. This includes intentional harm, neglect, and failing to provide adequate care, such as food, water, shelter, and veterinary care. It can also involve failing to provide adequate space, environmental enrichment, or proper handling, leading to physical or psychological harm.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How can i report animal cruelty in the Philippines?</span>
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Immediately contact your local barangay officials or the police by calling <stron>911.</stron> You can also report it to PAWS via their phone number<br> <strong>(475-1688)</strong> 
+or email<br> <strong>(philpaws@paws.org.ph)</strong> during office hours. To formally report the incident, you'll need to execute an affidavit and gather evidence like photos or videos.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What organizations here in the Philippines support animal rights and conservation?</span>
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>In Quezon City, the <strong>Philippine Animal Welfare Society (PAWS)</strong> is a prominent organization dedicated to animal rights and welfare. <strong>PAWS</strong>, a volunteer-based <strong>NGO</strong>, focuses on preventing cruelty, sheltering animals, and promoting humane treatment through education and advocacy. They also work to rehabilitate rescued animals and find them new homes.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can students like me make a difference?</span>
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><strong>‎You can raise awareness in school, join campaigns, volunteer, and make kinder daily choices.</strong></p>
+                </div>
+            </div>
+            
+<p style="text-align: center; width: 60%; margin: 0 auto; line-height: 1.6;">"The Earth is what we all have in common—let’s protect it together, one species at a time."</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="contact-section">
+            <h2>Still have questions?</h2>
+            <p>contact us by directing to our fb page "WILD GUARD: CLICK & CARE" or you can contact each members that you'll find in "about us". Or you can send a direct email to us wildguards7@gmail.com</p>
+            
+            <a href="https://www.facebook.com/share/19mvikRB7A/" class="btn">Connect With Us</a>
+        </div>
+        
+       <footer>
+           <div>
+               
+            <a href="FINAL-PROJECT.html" class="btn">Go Back</a></div><div><br></div>
+        </footer>
+        
+    </div>
+    
+    <script>
+        // Add click event to all FAQ questions
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                // Toggle active class on the clicked question
+                question.classList.toggle('active');
+                
+                // Get the associated answer element
+                const answer = question.nextElementSibling;
+                
+                // Toggle active class on the answer
+                answer.classList.toggle('active');
+                
+                // Close other open answers
+                document.querySelectorAll('.faq-answer.active').forEach(openAnswer => {
+                    if (openAnswer !== answer) {
+                        openAnswer.classList.remove('active');
+                        openAnswer.previousElementSibling.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
